@@ -37,6 +37,10 @@ body {
   height: auto;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .top1 {
   padding: 15px;
   /* display: flex;
