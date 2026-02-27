@@ -8,12 +8,19 @@
 html,body{
     height: 100%;
     width: 100%;
+    margin: 10px;
 }
 
 
 button{
-    margin: 1rem;
+    /* margin: 1rem; */
     padding: 5px 10px;
-    background-color: aquamarine;
+    background-color: rgb(3, 211, 211);
     border-radius: 5px;
+    font-size: 25px;
+    text-decoration: bold;
+}
+
+button:active{
+    scale: 0.95;
 }
