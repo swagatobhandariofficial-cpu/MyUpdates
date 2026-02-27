@@ -1,19 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const App = () => {
-  const arr =['Swagato','Disha','Srija','Debanjan','Subham','Badam','Arka','Subrata','Souvik']
-  const [name, setName] = useState(0)
+  const marks =[20,23,66,90,80,99]
+  const name  =['Swagato','Disha','Debanjan','Srija','Subham','Badam']
   return (
     <div>
-      <h1>{arr[name]}</h1>
-      <button onClick={()=>{
-        if(name>=arr.length -1){
-          setName(0)
-        }
-        else{
-          setName(name+1)
-        }
-      }}>Change Daddy</button>
+      {marks.map(function(elem,idx){
+        return <h1>{name[idx]} of student {idx+1} is: {elem+100}</h1>
+        
+      })}
     </div>
   )
 }
