@@ -14,7 +14,7 @@ const App = () => {
     <div>
       {marks.map(function (elem, idx) {
         return  <h1 key={idx}>
-                  {name[idx]} of student {idx + 1} is: {elem}
+                  {name[idx]} of student {idx + 1} is: {elem} ({elem>=35?'PASS':'FAIL'})
                 </h1>
 
       })}
