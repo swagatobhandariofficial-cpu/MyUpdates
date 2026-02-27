@@ -6,7 +6,14 @@ const App = () => {
   
 
   function grace() {
-    const newMarks = marks.map((elm)=> elm+5)
+    const newMarks = marks.map(function (elm) {
+      if(elm>=95){
+        return elm
+      }
+      else{
+        return elm + 5
+      }
+    })
     setMarks(newMarks)
   }
 
@@ -14,7 +21,14 @@ const App = () => {
     <div>
       {marks.map(function (elem, idx) {
         return  <h1 key={idx}>
-                  {name[idx]} of student {idx + 1} is: {elem} ({elem>=35?'PASS':'FAIL'})
+                  {name[idx]} of student {idx + 1} is: {elem} ({elem>=35?'PASS':'FAIL'}) — Grade: {
+                        elem >= 90 ? 'A+' :
+                        elem >= 75 ? 'A' :
+                        elem >= 60 ? 'B' :
+                        elem >= 50 ? 'C' :
+                        elem >= 35 ? 'D' :
+                        'F'
+  }
                 </h1>
 
       })}
