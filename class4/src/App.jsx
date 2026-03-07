@@ -1,15 +1,29 @@
-import React from 'react'
-import axios from 'axios'
+import React, { useState } from 'react'
+import axios, { all } from "axios";
+import User from './User';
+
+
 
 const App = () => {
-  async function getData(){
-    const response = await axios.get('https://picsum.photos/v2/list?page=2&limit=100')
-    console.log(response.data);
-    
+
+  const [allData, setAllData] = useState([])
+
+  async function getData() {
+    const promis = await axios.get('https://jsonplaceholder.typicode.com/users')
+    console.log(promis.data.name);
+    setAllData(promis.data)
   }
   return (
-    <div className='p-20'>
-      <button className='px-4 py-3 bg-emerald-400 rounded-2xl active:scale-105' onClick={getData}>Data</button>
+    <div className='p-10 '>
+      <button className='px-4 py-3 bg-emerald-400 hover:bg-emerald-300 poi rounded-2xl active:scale-95 cursor-pointer' onClick={getData}>Click Me🍒</button>
+
+      <div className='flex flex-wrap justify-evenly'>
+        {allData.map(function (elm, idx) {
+          return <div key={idx}>
+            <User elm={elm}/>
+          </div>
+        })}
+      </div>
     </div>
   )
 }
