@@ -2,22 +2,25 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios";
 
 const App = () => {
-  const [pokemon, setPokemon] = useState([])
+  const [randomuser, setRandomuser] = useState('')
+  const [num, setNum] = useState(0)
   const getData = async function () {
-    const pkmn = await axios.get('https://pokeapi.co/api/v2/pokemon')
-    setPokemon(pkmn.data.results);
+
+    const users = await axios.get('https://randomuser.me/api/')
+    setRandomuser(users.data.results[0].name.first + " " + users.data.results[0].name.last);
   }
-  useEffect(function(){
+  useEffect(function () {
     getData()
-  },[])
+  }, [num])
 
   return (
     <div className='p-5'>
-      <button className='px-3.5 py-3 active:scale-95 bg-emerald-500 rounded-xl' onClick={getData}>Show Pokemon</button>
+      <h1>{num}</h1>
+      <button className='px-3.5 py-3 active:scale-95 bg-emerald-500 rounded-xl' onClick={()=>{
+        setNum(num+1)
+      }}>Show User</button>
+      <h1>{randomuser}</h1>
 
-      {pokemon.map(function(elm,idx){
-        return <h1 key={idx}>{elm.name}</h1>
-      })}
     </div>
   )
 }
