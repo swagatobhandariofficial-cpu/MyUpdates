@@ -1,5 +1,7 @@
-tup = (2,5,44,2,True,False,5.5,5,5)
-index = tup.index(5.5)
-count = tup.count(5)
-print(index)
-print(count)
+a,b,c,d,e = (1,22,333,4444,55555)
+
+print(a)
+print(b)
+print(c)
+print(d)
+print(e)
