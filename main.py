@@ -1,10 +1,7 @@
-a = [22,34,2.4,True,99,-45,-33,-7,False]
+a = [22,34,2.4,99,-45,-33,-7]
 
-print("Positive elm are:")
+sum=0
+
 for i in a :
-    if i>=0:
-        print(i)
-print("Negative elm are:")
-for i in a :
-    if i<0:
-        print(i)
+    sum= i + sum
+print(sum/len(a))
