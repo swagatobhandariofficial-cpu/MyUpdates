@@ -1,10 +1,5 @@
-# a = [22,34,2.4,99,-45,-33,-7,39]
-a = [1,2,3,5,7,9,55,67]
-for i in range(len(a)-1):
-    if a[i]<a[i+1] :
-        continue
-    else :
-        print("Your List is not sorted.")
-        break
-else :
-    print("Your List is sorted")
+tup = (2,5,44,2,True,False,5.5,5,5)
+index = tup.index(5.5)
+count = tup.count(5)
+print(index)
+print(count)
