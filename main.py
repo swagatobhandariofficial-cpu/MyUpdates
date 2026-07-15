@@ -1,4 +1,10 @@
-a = [22,34,2.4,True,99]
-a[1]=88
+a = [22,34,2.4,True,99,-45,-33,-7,False]
 
-print(a)
+print("Positive elm are:")
+for i in a :
+    if i>=0:
+        print(i)
+print("Negative elm are:")
+for i in a :
+    if i<0:
+        print(i)
