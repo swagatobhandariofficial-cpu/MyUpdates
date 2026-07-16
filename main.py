@@ -1,6 +1,10 @@
-d1 = {10:100 , 20:200, 30:300} #crud operation
-sum = 0
+a = [1,1,2,1,4,3,2,1,4,5,6,7,9,8,8]
 
-for i in d1:
-    sum = sum+d1[i]
-print(sum)
+d={}
+
+for i in a:
+    if i in d.keys():
+        d[i]+=1
+    else:
+        d[i]=1
+print(d)
