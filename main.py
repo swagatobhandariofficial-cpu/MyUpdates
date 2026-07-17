@@ -1,11 +1,10 @@
-a = int(input("Telll your num:"))
-
+age = int(input("Enter your age:"))
 try:
-    print(10/a)
-    print("Calculation done!!!")
+    if age<10 or age >18 :
+        raise ValueError("Criteria Does not  match!!!")
+    else:
+        print("Welcome to the club")
 except Exception as err:
-    print(f"Try again. Your Error is: '{err}'")
-else:
-    print("THere is no exception")
+    print(f"Unfortunetly an error has occured: {err}")
 finally:
-    print("It will run even if any exception occurs.")
+    print("Program ran")
