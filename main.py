@@ -1,4 +1,4 @@
-# r = open("superman.txt",'w')
-r = open("superman.txt",'a')
-
-r.write(". Now i am appending some extra texts.")
+def sum(a,b):
+    print(a+b)
+sum(23,27)
+sum(55,45)
