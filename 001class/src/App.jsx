@@ -1,14 +1,30 @@
 import React from 'react'
-import Navbar from './components/Navbar'
+import Men from './components/Men'
+import Women from './components/Women'
 
 const App = () => {
+  const user1 = {
+    name: "Swagato",
+    age:23,
+    gender:"Male"
+  }
+
+  const user2 = {
+    name: "Disha",
+    age:22,
+    gender:"Female"
+  }
+
+  const user3 = {
+    name: "Sweety",
+    age:9,
+    gender:"Female"
+  }
+
+
   return (
     <div>
-      <h1>
-        <Navbar title='Swagato' color='red' links={['Home' ,'About' , 'Men' , 'Woman']} />
-        <Navbar title='Tomy' color='blue' links={['Home' ,'Info' , 'Contact' , 'Report' , 'Nehi']}/>
-        <Navbar title='nice' color='green' links={['Order' ,'Info' , 'Order again' , 'Console']}/>
-      </h1>
+      {user3.gender == 'Male' ? (user3.age >10 ? <Men/> : <Women/>) : <Women/>}
     </div>
   )
 }
