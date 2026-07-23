@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
 
 const App = () => {
-
+  const arr = ['sarthak','harsh','swagato']
   const [num, setNum] = useState(0)
-
   return (
     <div>
-      <div className='box'>
-        {num}
-      </div>
+      <h1>{arr[num]}</h1>
       <button onClick={()=>{
-        const rndm = Math.floor(Math.random()*100)
-        setNum(rndm)
-      }}>Click </button>
+        if(num<arr.length-1){
+          setNum(num+1)
+        }
+        else{
+          setNum(0)
+        }
+      }}>Change user</button>
     </div>
   )
 }
