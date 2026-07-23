@@ -14,3 +14,8 @@ html,body{
   width: 200px;
   background-color: coral;
 }
+
+.parent{
+  padding: 20px;
+  
+}
