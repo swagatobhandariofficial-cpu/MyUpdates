@@ -17,5 +17,18 @@ html,body{
 
 .parent{
   padding: 20px;
+
+}
+
+button{
+  padding: 10px 12px;
+  background-color:mediumspringgreen;
+  font-size: large;
+  border-radius: 5px;
+  border: 0px;
   
+}
+
+button:active{
+  scale: 0.95;
 }
