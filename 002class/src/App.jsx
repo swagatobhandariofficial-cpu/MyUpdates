@@ -1,28 +1,20 @@
 import React, { useState } from 'react'
 
 const App = () => {
-  const [num, setnNum] = useState(0)
 
+  const [num, setNum] = useState(0)
 
   return (
     <div>
-      <h1>{num}</h1>
-      <div>
-        <button onClick={() => {
-          setnNum(num + 1)
-        }}>Increase</button>
-
-        <button onClick={() => {
-          setnNum(num - 1)
-        }}>Decrease</button>
-
-        <button onClick={() => {
-          setnNum(num + 10)
-        }}>Jump by 10</button>
+      <div className='box'>
+        {num}
       </div>
+      <button onClick={()=>{
+        const rndm = Math.floor(Math.random()*100)
+        setNum(rndm)
+      }}>Click </button>
     </div>
   )
 }
 
 export default App
-
