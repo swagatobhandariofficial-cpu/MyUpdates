@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div>
       {marks.map(function (elm, idx) {
-        return <h1 key={idx}> Marks of students {idx + 1} is {elm}</h1>
+        return <h1 key={idx}> Marks of students {idx + 1} is {elm}  ({elm>35? 'PASS':'FAIL'}) </h1>
       })}
 
       <button onClick={grace}>Give them grace of 5 marks</button>
