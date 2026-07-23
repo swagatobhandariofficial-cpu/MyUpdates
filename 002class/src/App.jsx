@@ -6,7 +6,12 @@ const App = () => {
 
   function grace() {
     const newMa = marks.map(function (elm) {
-      return elm + 5
+      if (elm<95) {
+        return elm+5
+      }
+      else{
+        return elm
+      }
     })
     setMarks(newMa)
   }
