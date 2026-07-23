@@ -1,22 +1,23 @@
 import React, { useState } from 'react'
 
 const App = () => {
-  const [king, setking] = useState("Jack")
-  const [Queen, setQueen] = useState("Rose")
+  const [num, setnNum] = useState(0)
 
-  const cngKing = ()=>{
-    setking('Swagato')
-  }
-  const cngQueen = ()=>{
-    setQueen('Disha')
-  }
+
   return (
     <div>
-      <h1>{king} x {Queen}</h1>
-      <button onClick={cngKing}>Change king</button>
-      <button onClick={cngQueen}>Change Queen</button>
+      <h1>{num}</h1>
+      <div>
+        <button onClick={()=>{
+        setnNum(num+1)
+      }}>Increase</button>
+      <button onClick={()=>{
+        setnNum(num-1)
+      }}>Decrease</button>
+      </div>
     </div>
   )
 }
 
 export default App
+
