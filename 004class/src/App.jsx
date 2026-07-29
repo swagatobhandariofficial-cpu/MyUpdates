@@ -13,19 +13,17 @@ const App = () => {
 
   const submthndl = (e) => {
     e.preventDefault()
-    const oldUsers = [...allUsers]
-    oldUsers.push({ name, url, role, description })
-    setAllUsers(oldUsers)
-    console.log(oldUsers);
-
-
-
-    console.log(name, url, role, description);
+    setAllUsers([...allUsers, { name, url, role, description }]);
 
     setName('')
     setRole('')
     setUrl('')
     setDescription('')
+  }
+  const dltuser = (idx) => {
+    const copyUsers = [...allUsers]
+    copyUsers.splice(idx, 1)
+    setAllUsers(copyUsers)
   }
 
   return (
@@ -57,16 +55,8 @@ const App = () => {
       </form>
 
       <div className='m-4 px-5 py-4 border-1.5 rounded-xl flex flex-wrap gap-3' >
-        {allUsers.map((elm,idx) => {
-          return <div key={idx} className='lg:w-[20vw] lg:h-80 md:w-[30vw] md:h-90 sm:w-[40vw] rounded-xl text-center p-5 flex items-center flex-col bg-white text-taupe-950 '>
-            <img className='h-22 w-22 rounded-full object-center object-cover' src={elm.url} alt="" />
-            <h1 className='text-xl font-semibold m-0.5'>{elm.name}</h1>
-            <h6 className='text-sm text-blue-400 font-semibold my-0.5'>{elm.role}</h6>
-            <p className='py-2.5 px-4 text-sm my-0.5 font-light leading-tight '>{elm.description}</p>
-            <button onClick={()=>{
-
-            }} className='text-white my-2.5 px-3 py-1.5 rounded-[8px] text-sm bg-red-500 active:bg-red-400 active:scale-95 cursor-pointer transition-colors '>Remove</button>
-          </div>
+        {allUsers.map((elm, idx) => {
+          return <Card idx={idx} elm={elm} dltuser={dltuser}/>
         })}
 
       </div>
