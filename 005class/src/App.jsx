@@ -28,7 +28,13 @@ const App = () => {
   }
   const dltuser = (idx) => {
     const copyUsers = [...allUsers]
-    copyUsers.splice(idx, 1)
+    const conf = confirm('Are you sure you want to delete this user?')
+    if(conf){
+      copyUsers.splice(idx, 1)
+    }
+    else{
+      alert('User not deleted')
+    }
     setAllUsers(copyUsers)
     localStorage.setItem('all-users',JSON.stringify(copyUsers))
   }
