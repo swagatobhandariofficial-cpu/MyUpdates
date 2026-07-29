@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: black;
+}
+
+.card {
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.upper {
+    height: 50%;
+    width: 100%;
+}
+
+.lower {
+    height: 50%;
+    width: 100%;
+    padding: 20px;
+}
+
+.upper img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.lower h2 {
+    color: rgb(26, 89, 89);
+    font-size: 40px;
+
+}
+
+.lower h4 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #888;
+}
+
+.lower h3 {
+    font-size: 25px;
+    color: darkgray;
+    margin-top: 30px;
+}
